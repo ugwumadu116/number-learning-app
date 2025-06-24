@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kids Learning Games App
 
-## Getting Started
+An interactive learning application for kids featuring numbers, alphabets, colors, and drums with audio feedback.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Numbers Learning**: Tap numbers to hear them pronounced
+- **Alphabet Learning**: Interactive A-Z letter learning with audio
+- **Color Learning**: Discover colors with fun animations and sounds
+- **Drum Learning**: Play virtual drums with realistic sounds
+- **Swipe Interface**: Swipe between different learning modules
+- **Responsive Design**: Works on desktop and mobile devices
+
+## Tech Stack
+
+- **Frontend**: Next.js 15.3.4 with React 19
+- **Styling**: Tailwind CSS 4
+- **Language**: TypeScript
+- **Audio**: HTML5 Audio API
+
+## Local Development
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+4. **Start production server**:
+   ```bash
+   npm start
+   ```
+
+## Deployment to Render.com
+
+### Prerequisites
+- A Render.com account
+- Your code pushed to a Git repository (GitHub, GitLab, etc.)
+
+### Deployment Steps
+
+1. **Push your code to Git**:
+   ```bash
+   git add .
+   git commit -m "Prepare for deployment"
+   git push origin main
+   ```
+
+2. **Deploy to Render.com**:
+
+   **Option A: Using render.yaml (Recommended)**
+   - The `render.yaml` file is already configured
+   - Connect your Git repository to Render
+   - Render will automatically detect and deploy using the configuration
+
+   **Option B: Manual Setup**
+   - Go to [Render.com](https://render.com) and sign in
+   - Click "New +" and select "Web Service"
+   - Connect your Git repository
+   - Configure the service:
+     - **Name**: `number-learning-app` (or your preferred name)
+     - **Environment**: `Node`
+     - **Build Command**: `npm install && npm run build`
+     - **Start Command**: `npm start`
+     - **Environment Variables**:
+       - `NODE_ENV`: `production`
+
+3. **Automatic Deployments**:
+   - Render will automatically deploy when you push changes to your main branch
+   - Each deployment gets a unique URL
+   - You can set up a custom domain if needed
+
+### Environment Variables
+
+The following environment variables are automatically set by Render:
+- `NODE_ENV`: Set to `production` for optimized builds
+
+### Build Configuration
+
+The app uses the following build configuration:
+- **Node.js**: Latest LTS version
+- **Build Command**: `npm install && npm run build`
+- **Start Command**: `npm start`
+- **Static Files**: Served from the `public` directory
+
+### Performance Optimizations
+
+- Static generation for better performance
+- Optimized images and audio files
+- Responsive design for all devices
+- Efficient bundle splitting
+
+## Project Structure
+
+```
+number-learning-app/
+├── public/
+│   └── sounds/          # Audio files for learning modules
+├── src/
+│   └── app/            # Next.js app router pages
+│       ├── alphabets/  # Alphabet learning module
+│       ├── colors/     # Color learning module
+│       ├── drums/      # Drum learning module
+│       ├── numbers/    # Number learning module
+│       └── swipe/      # Swipe interface
+├── render.yaml         # Render.com deployment configuration
+└── package.json        # Dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Audio Files
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The app includes audio files for:
+- **Numbers**: 1-10 pronunciation
+- **Alphabets**: A-Z letter sounds
+- **Colors**: Color names with examples
+- **Drums**: Various drum sounds
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All audio files are stored in the `public/sounds/` directory and are served statically.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the [MIT License](LICENSE).
