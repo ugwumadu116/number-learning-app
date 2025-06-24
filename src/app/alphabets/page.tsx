@@ -109,7 +109,7 @@ export default function AlphabetsLearning() {
                 </div>
 
                 {/* Alphabet Grid */}
-                <div className="grid grid-cols-5 gap-2 max-w-xs mx-auto w-full mb-4">
+                <div className="grid grid-cols-4 gap-2 max-w-xs mx-auto w-full mb-4">
                     {alphabet.map((letter, index) => (
                         <button
                             key={letter}
